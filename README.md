@@ -59,59 +59,57 @@ git clone https://github.com/username/alarm.git
 
 2. Navigate to the project folder:
 
-cd
+cd Basic Calculator
 
 
 3. Run the program:
 
-python alarm.py
+Basic Python Calculator.py
 
 
 
 
 ---
 
-📌 Example Usage
+📌 This calculator does the following: 
 
-Enter time for alarm (HH:MM:SS): 06:30:00
-Alarm set for 06:30:00
-Wake up! ⏰
-
-If using sound, it will automatically play an MP3 when time matches.
-
-
----
-
-🧩 Sample Code (alarm.py)
-
-import datetime
-import time
-from playsound import playsound
-
-alarm_time = input("Enter time for alarm (HH:MM:SS): ")
-
-print(f"Alarm set for {alarm_time}")
-
-while True:
-    current_time = datetime.datetime.now().strftime("%H:%M:%S")
-    if current_time == alarm_time:
-        print("Wake up! ⏰")
-        #playsound("alarm_sound.mp3")  # Uncomment to play sound
-        break
-    time.sleep(1)
+Takes input - Asks the user for two numbers and an operation
+Uses if-else statements - Checks which operation the user wants (+, -, *, /)
+Performs calculation - Executes the appropriate math operation
+Displays result - Shows the calculation and answer
+Handles errors - Prevents division by zero and checks for invalid operations
 
 
 ---
 
-📝 Notes
+🧩 Sample Code (Basic Python Calculator.py)
 
-Time must be entered exactly in correct format.
+print("Welcome to Basic Calculator!")
+print("Operations: +, -, *, /")
 
-You can replace the MP3 file with any audio you prefer.
+# Get user input
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operation = input("Enter operation (+, -, *, /): ")
 
-To loop the alarm sound, wrap playsound() inside a loop.
-
-
+# Perform calculation based on operation
+if operation == "+":
+    result = num1 + num2
+    print(f"{num1} + {num2} = {result}")
+elif operation == "-":
+    result = num1 - num2
+    print(f"{num1} - {num2} = {result}")
+elif operation == "*":
+    result = num1 * num2
+    print(f"{num1} * {num2} = {result}")
+elif operation == "/":
+    if num2 != 0:
+        result = num1 / num2
+        print(f"{num1} / {num2} = {result}")
+    else:
+        print("Error: Cannot divide by zero!")
+else:
+    print("Invalid operation! Please use +, -, *, or /")
 
 ---
 
@@ -122,11 +120,3 @@ This project is free to use and modify. Add your custom license if needed.
 
 ---
 
-Would you like me to:
-
-✅ Add screenshots
-✅ Add GitHub badges
-✅ Format this as a professional open-source README
-✅ Add installation & advanced features
-
-Just tell me!
